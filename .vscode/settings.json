@@ -2,6 +2,15 @@
   "python.testing.pytestArgs": ["tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.extraPaths": ["src"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.ruff": true,
+    "source.organizeImports.ruff": true
+  },
+  "editor.defaultFormatter": "charliermarsh.ruff",
   "ruff.configurationPreference": "filesystemFirst",
-  "ruff.configuration": "pyproject.toml"
+  "ruff.configuration": "pyproject.toml",
+  "ruff.enableLintOnSave": true
 }
