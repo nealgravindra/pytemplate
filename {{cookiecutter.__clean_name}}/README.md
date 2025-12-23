@@ -6,12 +6,20 @@ Logging is pre-wired with [Loguru](https://github.com/Delgan/loguru); set `LOG_L
 
 ## Setup Dev Environment
 
+**Step 0**: initialize project
+
+```bash
+uvx cruft create https://github.com/nealgravindra/pytemplate
+```
+
 Installation is using [UV](https://docs.astral.sh/uv/) to manage everything.
 
 **Step 1**: Create a virtual environment
 
 ```
-uv venv
+make setup
+
+# calls `uv sync`
 ```
 
 **Step 2**: Activate your new environment
@@ -22,12 +30,6 @@ uv venv
 
 # on mac / linux
 source .venv/bin/activate
-```
-
-**Step 3**: Install all the cool dependencies
-
-```
-uv sync
 ```
 
 ## Github Repo Setup
