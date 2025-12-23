@@ -97,4 +97,5 @@ required_files: list[str] = [
     ".vscode/extensions.json",
     ".gitignore",
     ".pre-commit-hooks.yaml",
+    ".pre-commit-config.yaml",
 ]
