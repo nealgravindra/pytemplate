@@ -2,6 +2,8 @@
 
 {{cookiecutter.project_description}}
 
+Logging is pre-wired with [Loguru](https://github.com/Delgan/loguru); set `LOG_LEVEL` to adjust verbosity and use the shared `logger` from `{{cookiecutter.__clean_slug}}.logging`.
+
 ## Setup Dev Environment
 
 Installation is using [UV](https://docs.astral.sh/uv/) to manage everything.
@@ -50,15 +52,10 @@ task run
 # run all tests
 task tests
 
-{% if cookiecutter.include_nox == 'y' %}
-# run tests with multiple python versions (3.13,3.12,3.11,3.10)
-task nox
-{%- endif %}
-
 # run test coverage and generate report
 task coverage
 
-# typechecking with Ty or Mypy
+# typechecking with Ty
 task type
 
 # ruff linting
@@ -137,6 +134,7 @@ Dependabot is configured to do _weekly_ scans of your dependencies, and pull req
 ## References
 
 - [Cookiecutter Python Project](https://github.com/wyattferguson/pattern) - A modern cookiecutter template for your next Python project.
+- [Loguru](https://github.com/Delgan/loguru) - Structured logging made simple.
 
 ## License
 

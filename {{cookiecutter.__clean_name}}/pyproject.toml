@@ -18,18 +18,12 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
+    "loguru>=0.7.2",
 ]
 
 [dependency-groups]
 dev = [
-    {%- if cookiecutter.typechecker == 'ty' %}
     "ty>=0.0.1a11",
-    {% else %}
-    "mypy >=1.16.1",
-    {%- endif %}
-    {%- if cookiecutter.include_nox == 'y' %}
-    "nox>=2025.5.1",
-    {%- endif %}
     "pytest>=8.4.1",
     "coverage>=7.8.2",
     "ruff>=0.12.0",
@@ -59,11 +53,7 @@ build-backend = "uv_build"
 [tool.taskipy.tasks]
 format = { cmd = "ruff format ./src/", help = "Format code using ruff" }
 lint = { cmd = "ruff check --fix ./src/", help = "Lint code using ruff" }
-{%- if cookiecutter.typechecker == 'ty' %}
 type = { cmd = "ty check", help = "Typecheck code using ty" }
-{%- else %}
-type = { cmd = "mypy --strict ./src/", help = "Typecheck code using mypy" }
-{%- endif %}
 {%- if cookiecutter.include_docs == 'y' %}
 docs = { cmd = "portray in_browser", help = "Serve documentation in browser" }
 serve = { cmd = "portray server", help = "Serve documentation" }
@@ -71,9 +61,6 @@ html = { cmd = "portray as_html", help = "Build HTML documentation" }
 publish = { cmd = "portray on_github_pages", help = "Publish documentation on GitHub Pages" }
 {%- endif %}
 tests = { cmd = "pytest --verbose --color=yes tests", help = "Run all tests using pytest" }
-{%- if cookiecutter.include_nox == 'y' %}
-nox = { cmd = "nox -s tests", help = "Run tests in a nox session" }
-{%- endif %}
 coverage = { cmd = "coverage run -m pytest tests && coverage report", help = "Generate coverage report" }
 run = { cmd = "uv run ./src/{{cookiecutter.__clean_slug}}/{{cookiecutter.__clean_slug}}.py", help = "Run main application" }
 
@@ -110,23 +97,10 @@ ignore = [
     "TRY003", # long-exception-messages
 ]
 
-{% if cookiecutter.typechecker == 'ty' %}
 [tool.ty]
 src.root = "./src"
 environment.python = "./.venv"
 terminal.output-format = "concise"
-{%- else %}
-[tool.mypy]
-files = ["src", "tests"]
-ignore_missing_imports = true
-disallow_untyped_defs = true
-disallow_any_unimported = false
-no_implicit_optional = true
-check_untyped_defs = true
-warn_return_any = false
-warn_unused_ignores = true
-show_error_codes = true
-{%- endif %}
 
 [tool.coverage.report]
 skip_empty = true
@@ -145,4 +119,3 @@ site_name = "{{cookiecutter.project_name}}"
 name = "material"
 custom_dir = "docs"
 palette = {scheme= "slate", primary="deep purple", accent="purple"}
-

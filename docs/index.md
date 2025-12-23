@@ -27,10 +27,10 @@ Everything comes preconfigured to work out of the box. On setup you can pick and
 
 - 📦 [UV](https://docs.astral.sh/uv/) - Package and project manager
 - 🦀 [Ruff](https://docs.astral.sh/ruff/) - Linter and code formatter.
-- 🐛 Typechecking with [Ty](https://github.com/astral-sh/ty) or [Mypy](https://www.mypy-lang.org/).
+- 🐛 Typechecking with [Ty](https://github.com/astral-sh/ty).
+- 🔊 Application logging pre-wired with [Loguru](https://github.com/Delgan/loguru).
 - 🧪 [Pytest](https://docs.pytest.org/en/stable/) - Testing
 - 🔭 [Coverage](https://coverage.readthedocs.io/en/7.6.12/) - Test coverage.
-- 🏭 [Nox](https://nox.thea.codes/en/stable/index.html) - Testing in multiple Python environments.
 - 🛵 [Taskipy](https://github.com/taskipy/taskipy) - Task runner for CLI shortcuts.
 - 📼 [Portray](https://timothycrosley.github.io/portray/) - Doc generation and Github Pages deployment.
 - 📡 [PyPI](https://pypi.org/) package publishing.

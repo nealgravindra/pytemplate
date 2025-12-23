@@ -29,10 +29,10 @@ Everything comes pre-configured to work out of the box. On setup you can pick an
 
 - :package: [UV](https://docs.astral.sh/uv/) - Package and project manager
 - :crab: [Ruff](https://docs.astral.sh/ruff/) - Linter and code formatter.
-- :bug: Typechecking with [Ty](https://github.com/astral-sh/ty) or [Mypy](https://www.mypy-lang.org/).
+- :bug: Typechecking with [Ty](https://github.com/astral-sh/ty).
+- :loud_sound: Application logging pre-wired with [Loguru](https://github.com/Delgan/loguru).
 - :test_tube: [Pytest](https://docs.pytest.org/en/stable/) - Testing
 - :telescope: [Coverage](https://coverage.readthedocs.io/en/7.6.12/) - Test coverage.
-- :shaved_ice: [Nox](https://nox.thea.codes/en/stable/index.html) - Testing in multiple Python environments.
 - :small_airplane: [Taskipy](https://github.com/taskipy/taskipy) - Task runner for CLI shortcuts.
 - :vhs: [Portray](https://timothycrosley.github.io/portray/) - Doc generation and Github Pages deployment.
 - :takeout_box: [PyPI](https://pypi.org/) package publishing.

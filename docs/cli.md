@@ -11,13 +11,10 @@ task run
 # run all tests
 task tests
 
-# run tests with multiple python versions (3.13,3.12,3.11,3.10)
-task nox
-
 # run test coverage and generate report
 task coverage
 
-# typechecking with Ty or Mypy
+# typechecking with Ty
 task type
 
 # ruff linting
