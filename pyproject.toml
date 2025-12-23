@@ -40,6 +40,7 @@ dev = [
     "mkdocs-minify-plugin>=0.8.0",
     "mkdocs-github-admonitions-plugin>=0.1.1",
     "cffconvert>=2.0.0",
+    "ipdb",
 ]
 
 [project.urls]
