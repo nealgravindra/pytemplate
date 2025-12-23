@@ -21,7 +21,7 @@ classifiers = [
 ]
 
 dependencies = [
-  "cookiecutter>=2.1.1"
+  "cookiecutter>=2.1.1",
 ]
 
 [dependency-groups]
@@ -30,7 +30,6 @@ dev = [
     "pytest>=8.4.1",
     "pytest-cookies>=0.7.0",
     "ruff>=0.12.0",
-    "taskipy>=1.14.1",
     "toml>=0.10.2",
     "mkdocs>=1.3.1",
     "mkdocs-include-markdown-plugin>=7.1.6",
@@ -40,22 +39,14 @@ dev = [
     "mkdocs-minify-plugin>=0.8.0",
     "mkdocs-github-admonitions-plugin>=0.1.1",
     "cffconvert>=2.0.0",
-    "ipdb",
+    "ipdb>=0.13.13",
+    "pytest-testmon>=2.2.0",
 ]
 
 [project.urls]
 Repository = "https://github.com/wyattferguson/pattern"
 Documentation = "https://wyattferguson.github.io/pattern"
 Issues = "https://github.com/wyattferguson/pattern/issues"
-
-[tool.taskipy.tasks]
-format = { cmd = "ruff format ./src/", help = "Format code using ruff" }
-lint = { cmd = "ruff check --fix ./src/", help = "Lint code using ruff" }
-type = { cmd = "ty check ./tests ./hooks", help = "Typecheck code using ty" }
-tests = { cmd = "pytest --color=yes tests", help = "Run all tests using pytest" }
-docs = { cmd = "mkdocs build", help = "Build documentation using mkdocs" }
-serve = { cmd = "mkdocs serve", help = "Serve documentation using mkdocs" }
-publish = { cmd = "mkdocs gh-deploy", help = "Publish documentation to GitHub Pages" }
 
 [tool.ruff]
 line-length = 100
