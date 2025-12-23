@@ -23,11 +23,13 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "ipdb>=0.13.13",
+    "pytest-testmon>=2.2.0",
+    "pytest-sugar>=1.0.0",
     "ty>=0.0.1a11",
     "pytest>=8.4.1",
     "coverage>=7.8.2",
     "ruff>=0.12.0",
-    "taskipy>=1.14.1",
     {%- if cookiecutter.include_docs == 'y' %}
     "portray>=1.8.0",
     "legacy-cgi>=2.6.3",
@@ -49,22 +51,6 @@ issues = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.rep
 [build-system]
 requires = ["uv_build>=0.7.19,<0.8.0"]
 build-backend = "uv_build"
-
-[tool.taskipy.tasks]
-setup = { cmd = "uv sync", help = "Install dependencies and project in editable mode" }
-format = { cmd = "ruff format ./src/", help = "Format code using ruff" }
-lint = { cmd = "ruff check --fix ./src/", help = "Lint code using ruff" }
-type = { cmd = "ty check", help = "Typecheck code using ty" }
-{%- if cookiecutter.include_docs == 'y' %}
-docs = { cmd = "portray in_browser", help = "Serve documentation in browser" }
-serve = { cmd = "portray server", help = "Serve documentation" }
-html = { cmd = "portray as_html", help = "Build HTML documentation" }
-publish = { cmd = "portray on_github_pages", help = "Publish documentation on GitHub Pages" }
-{%- endif %}
-tests = { cmd = "pytest --verbose --color=yes tests", help = "Run all tests using pytest" }
-coverage = { cmd = "coverage run -m pytest tests && coverage report", help = "Generate coverage report" }
-run = { cmd = "uv run ./src/{{cookiecutter.__clean_slug}}/{{cookiecutter.__clean_slug}}.py", help = "Run main application" }
-pr = { cmd = "task format && task lint && task type && task tests", help = "Run full PR check (Format, Lint, Type, Test)" }
 
 [tool.ruff]
 line-length = 100

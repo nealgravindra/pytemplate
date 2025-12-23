@@ -6,8 +6,8 @@
   "python.analysis.extraPaths": ["src"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.ruff": true,
-    "source.organizeImports.ruff": true
+    "source.fixAll.ruff": "explicit",
+    "source.organizeImports.ruff": "explicit"
   },
   "editor.defaultFormatter": "charliermarsh.ruff",
   "ruff.configurationPreference": "filesystemFirst",
