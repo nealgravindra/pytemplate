@@ -72,6 +72,7 @@ def test_required_files(bake: Bake) -> None:
     files: list[str] = [
         f"src/{slug}",
         f"src/{slug}/{slug}.py",
+        f"src/{slug}/logging.py",
         *required_files,
     ]
     for file in files:

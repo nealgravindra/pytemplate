@@ -53,9 +53,6 @@ def prune_unwanted_files() -> None:
     if "{{cookiecutter.include_docs}}" != "y":
         remove("docs")
 
-    if "{{cookiecutter.include_nox}}" != "y":
-        remove("noxfile.py")
-
     if "{{cookiecutter.include_docker}}" != "y":
         remove("Dockerfile")
         remove(".dockerignore")
