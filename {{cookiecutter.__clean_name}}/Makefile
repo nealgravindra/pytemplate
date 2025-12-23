@@ -18,7 +18,7 @@ help:
 	@echo "  clean      Remove cache files (.testmondata, .ruff_cache, etc.)"
 
 setup:
-	uv sync --locked
+	uv sync
 
 format:
 	uv run ruff format ./src/
