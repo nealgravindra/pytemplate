@@ -21,10 +21,10 @@ setup:
 	uv sync
 
 format:
-	uv run ruff format ./src/
+	uv run ruff format
 
 lint:
-	uv run ruff check --fix ./src/
+	uv run ruff check --fix
 
 type:
 	uv run ty check
