@@ -21,13 +21,13 @@ setup:
 	uv sync
 
 format:
-	uv run ruff format
+	uv run ruff format ./src
 
 lint:
-	uv run ruff check --fix
+	uv run ruff check --fix ./src
 
 type:
-	uv run ty check
+	uv run ty check ./src
 
 tests:
 	uv run pytest --testmon
