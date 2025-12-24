@@ -1,11 +1,11 @@
 """Run after cookiecutter to finish environment setup and remove excluded files."""
 
+import json
+import os
 import shutil
 import subprocess
 from enum import StrEnum
 from pathlib import Path
-import json
-import os
 
 
 class Colors(StrEnum):
@@ -120,34 +120,8 @@ def display_project_details() -> None:
     print("\n####################################################################\n")
 
 
-def update_cruft_json():
-    """
-    Automatically add .git and .venv to the .cruft.json skip list
-    so updates don't crash in the future.
-    """
-    cruft_file = Path(".cruft.json")
-    if cruft_file.exists():
-        try:
-            data = json.loads(cruft_file.read_text())
-            # Ensure 'skip' list exists
-            if "skip" not in data:
-                data["skip"] = []
-
-            # Add the required ignore patterns
-            ignores = [".git", ".venv", "__pycache__", ".mypy_cache"]
-            for item in ignores:
-                if item not in data["skip"]:
-                    data["skip"].append(item)
-
-            cruft_file.write_text(json.dumps(data, indent=2))
-        except Exception:
-            # Silently fail if cruft.json is malformed or locked
-            pass
-
-
 if __name__ == "__main__":
     setup_uv_environment()
     prune_unwanted_files()
     setup_git()
     display_project_details()
-    update_cruft_json()
