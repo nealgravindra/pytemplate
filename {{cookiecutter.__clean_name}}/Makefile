@@ -27,7 +27,7 @@ lint:
 	uv run ruff check --fix ./src/
 
 type:
-	uv run ty check ./src/
+	uv run ty check
 
 tests:
 	uv run pytest --testmon
