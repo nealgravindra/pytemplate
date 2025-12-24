@@ -2,4 +2,5 @@ import pytest
 
 
 def dummy_test():
-    assert True
+    """Test to avoid empty test suite error."""
+    return True
