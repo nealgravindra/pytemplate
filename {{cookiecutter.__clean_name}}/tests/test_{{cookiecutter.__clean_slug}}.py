@@ -1,6 +1,6 @@
 import pytest
 
 
-def test_dummy() -> bool:
+def test_dummy() -> None:
     """Test to avoid empty test suite error."""
-    return True
+    assert 1 + 1 == 2
