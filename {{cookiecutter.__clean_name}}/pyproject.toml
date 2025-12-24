@@ -85,7 +85,7 @@ ignore = [
 ]
 
 [tool.ty]
-environment.roots = ["./src"]
+environment.root = "./src"
 environment.python = "./.venv"
 terminal.output-format = "concise"
 
