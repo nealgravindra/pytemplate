@@ -13,6 +13,14 @@ uvx cruft create https://github.com/nealgravindra/pytemplate
 
 # install git hooks
 uv run pre-commit install
+
+# add this for fixing cruft updates to `.cruft.json`
+"skip": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".mypy_cache"
+  ],
 ```
 
 Installation is using [UV](https://docs.astral.sh/uv/) to manage everything.
