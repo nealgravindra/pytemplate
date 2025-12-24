@@ -10,6 +10,9 @@ Logging is pre-wired with [Loguru](https://github.com/Delgan/loguru); set `LOG_L
 
 ```bash
 uvx cruft create https://github.com/nealgravindra/pytemplate
+
+# install git hooks
+uv run pre-commit install
 ```
 
 Installation is using [UV](https://docs.astral.sh/uv/) to manage everything.
