@@ -19,6 +19,7 @@ classifiers = [
 ]
 dependencies = [
     "loguru>=0.7.2",
+    # my preferred ML stack: torch polars pydantic transformers accelerate
 ]
 
 [dependency-groups]
